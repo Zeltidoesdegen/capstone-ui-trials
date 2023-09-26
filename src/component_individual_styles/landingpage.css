@@ -1,0 +1,64 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url(../fontstyles/game_on/Game\ On_PersonalUseOnly.ttf);
+}
+  
+html{
+    height:100%
+}
+
+.brandBody{
+    height:100%;
+    background: black;
+    background-size:cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:sans-serif;
+    margin:0;
+    overflow:hidden
+}
+
+#brandName{  
+    text-align:center;
+    cursor:pointer;
+}
+#brandName img{
+    display:block;
+    width:100vw;
+    max-width:700px;
+    height:auto;
+    transition:0.2s
+}
+#brandName a{
+    display:block;
+    font-family: myFirstFont;
+    font-size:3em;
+    color:#333;
+    font-weight:800;
+    text-decoration:none;
+    background:rgba(0,0,40,0);
+    padding:5px 15px;
+    transition:0.4s;
+}
+#brandName:hover a{  
+    color:rgba(200,80,50,1);
+    text-shadow:2px 5px 0 rgba(0,0,0,0.6);
+}
+  
+@media only screen and (max-width: 320px) {
+    #brandName img{
+      width: 100%;
+    } 
+}
+  
+@media only screen and (min-width: 2560px) {
+    #brandName img{
+      max-width: 900px;
+      width: 900px;
+    } 
+    #brandName a {
+      font-size: 5rem;
+    }
+}
+  

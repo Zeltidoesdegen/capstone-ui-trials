@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import LandingPage from "./components/landingpage";
+import MainBody from './pages/mainbody';
+import UserContext from './components/ContextProvider';
+import IngredientsPickerMain from './pages/IngredientsPicker'
+import { ChakraProvider } from '@chakra-ui/react'
+import Home from './layouts/ModalFood';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <ChakraProvider>
+      <body>
+        <BrowserRouter>
+          <UserContext.Provider>
+            <Routes>
+              <Route path="/" element={<LandingPage />}></Route>
+              <Route path="/mainMenu" element={<MainBody />}></Route>
+              <Route path="/Pick_Ingredients" element={<IngredientsPickerMain />}></Route>
+              <Route path="/Random_Recipe" element={<Home></Home>}></Route>
+            </Routes>
+          </UserContext.Provider>
+        </BrowserRouter>
+      </body>
+    </ChakraProvider>
+  )
 }
 
 export default App;
